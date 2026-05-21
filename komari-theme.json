@@ -1,10 +1,10 @@
 {
-    "name": "nezha-BITJEBE",
-    "short": "nezha-BITJEBE",
-    "description": "nezha-BITJEBE Theme for Komari Monitor",
+    "name": "komari-nezha",
+    "short": "komari-nezha",
+    "description": "ATaraxl personal modified Komari Monitor theme based on nezha-BITJEBE",
     "version": "1.0.3",
-    "author": "BITJEBE",
-    "url": "https://github.com/BITJEBE/nezha-BITJEBE",
+    "author": "ATaraxl",
+    "url": "https://github.com/ATaraxl/komari-nezha",
     "preview": "preview.png",
     "configuration": {
         "type": "managed",

@@ -1,8 +1,17 @@
-# nezha-BITJEBE
+# komari-nezha
 
-基于 [nezha-dash-v1](https://github.com/Akizon77/nezha-dash-v1) 二次开发的 [Komari Monitor](https://github.com/komari-monitor/komari) 自定义主题。
+这是我基于 [BITJEBE/nezha-BITJEBE](https://github.com/BITJEBE/nezha-BITJEBE) 继续修改的 [Komari Monitor](https://github.com/komari-monitor/komari) 自定义主题个人修改版。
+
+本仓库主要用于保存个人定制内容和后续维护记录。
 
 ## 功能特性
+
+### 个人定制
+- 点击粒子特效：点击或轻触页面时显示彩色粒子爆散动画
+- 毛玻璃样式：卡片、按钮、标签、详情页顶部概览等区域使用玻璃拟态效果
+- 日语支持：新增 `ja-JP` 语言资源与语言切换入口
+- c5 风格时间区：首页顶部使用大号动态时间显示
+- 详情页顶部概览卡片：优化圆角和毛玻璃视觉
 
 ### 流量进度条
 - 服务器卡片内置流量使用进度条（无需外部脚本）
@@ -30,14 +39,14 @@
 ## 安装方法
 
 ### 方法一：通过 Komari 管理面板上传
-1. 从 [Releases](https://github.com/BITJEBE/nezha-BITJEBE/releases) 下载最新的 zip 文件
+1. 从本仓库 Releases 下载最新的 zip 文件
 2. 进入 Komari 管理面板 -> 主题管理
 3. 点击上传并选择 zip 文件
 
 ### 方法二：从源码构建
 ```bash
-git clone https://github.com/BITJEBE/nezha-BITJEBE.git
-cd nezha-BITJEBE
+git clone https://github.com/ATaraxl/komari-nezha.git
+cd komari-nezha
 npm install
 npm run build
 ```
@@ -68,7 +77,7 @@ So-net<red>;1Gbps<green>;CN2 GIA<blue>
 - TanStack React Query
 - Recharts
 - Framer Motion
-- i18next（中文 / 英文）
+- i18next（中文 / 英文 / 日语等）
 
 ## 致谢
 
