@@ -234,45 +234,119 @@
 }
 
 
-/* c5 migrated glassmorphism */
+/* c5 migrated glassmorphism - refined A/B/D version */
 .glass-panel {
-  background: #ffffff6b;
-  border: 1px solid rgba(255, 255, 255, 0.34);
-  box-shadow: 0 14px 40px #0f172a1a, inset 0 1px #ffffff61;
-  backdrop-filter: blur(18px) saturate(160%);
-  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  background: rgba(255, 255, 255, 0.035) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(6px) saturate(110%) !important;
+  -webkit-backdrop-filter: blur(6px) saturate(110%) !important;
 }
 
 .dark .glass-panel {
-  background: #18181b52;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 18px 42px #00000038, inset 0 1px #ffffff0d;
+  background: rgba(20, 20, 24, 0.18) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
 }
 
 .glass-chip {
-  background: #ffffff57;
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  box-shadow: 0 8px 24px #0f172a14, inset 0 1px #ffffff57;
-  backdrop-filter: blur(16px) saturate(150%);
-  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  background: rgba(255, 255, 255, 0.035) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(5px) saturate(105%) !important;
+  -webkit-backdrop-filter: blur(5px) saturate(105%) !important;
 }
 
 .dark .glass-chip {
-  background: #18181b3d;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 10px 28px #0000002e, inset 0 1px #ffffff0d;
+  background: rgba(20, 20, 24, 0.18) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: none !important;
 }
 
 .glass-chip-active {
-  background: #ffffff70;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 10px 28px #0f172a18, inset 0 1px #ffffff66;
-  backdrop-filter: blur(16px) saturate(150%);
-  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.14) !important;
+  backdrop-filter: blur(5px) saturate(105%) !important;
+  -webkit-backdrop-filter: blur(5px) saturate(105%) !important;
 }
 
 .dark .glass-chip-active {
-  background: #27272a70;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 10px 28px #00000030, inset 0 1px #ffffff10;
+  background: rgba(39, 39, 42, 0.22) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+}
+
+.glass-panel,
+.glass-chip,
+.glass-chip-active {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-panel::after,
+.glass-chip::after,
+.glass-chip-active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  transform: skewX(-30deg);
+  pointer-events: none;
+  z-index: 1;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.08) 45%,
+    rgba(255, 255, 255, 0.13) 50%,
+    rgba(255, 255, 255, 0.08) 55%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transition: left 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.glass-panel:hover::after,
+.glass-chip:hover::after,
+.glass-chip-active:hover::after {
+  left: 150%;
+}
+
+.header-timer .text-\[2\.05rem\] {
+  font-size: 2.7rem !important;
+  line-height: 1 !important;
+  letter-spacing: -0.035em !important;
+}
+
+@media (min-width: 768px) {
+  .header-timer .md\:text-\[2\.4rem\] {
+    font-size: 3.1rem !important;
+  }
+}
+
+.server-overview-controls > section > button:not(:first-child),
+.server-overview-controls .server-info-tab,
+.server-overview-controls > button,
+.server-overview-controls > [data-radix-popper-content-wrapper],
+.server-overview-controls > div:not(:first-child) {
+  display: none !important;
+}
+
+.server-overview-controls > section {
+  width: auto !important;
+  overflow: visible !important;
+}
+
+.server-overview-controls {
+  justify-content: flex-start !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glass-panel::after,
+  .glass-chip::after,
+  .glass-chip-active::after {
+    display: none;
+    transition: none;
+  }
 }
