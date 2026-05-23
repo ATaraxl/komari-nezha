@@ -28,9 +28,10 @@ function random(min: number, max: number) {
 }
 
 function createBurst(x: number, y: number): Particle[] {
-  const count = 22
+  const count = 26
   const spread = 160
-  const baseSize = 5
+  const minSize = 5
+  const maxSize = 7.5
 
   const now = Date.now() + Math.floor(Math.random() * 100000)
 
@@ -44,9 +45,9 @@ function createBurst(x: number, y: number): Particle[] {
       y,
       dx: Math.cos(angle) * distance,
       dy: Math.sin(angle) * distance,
-      size: random(baseSize - 0.8, baseSize + 1.4),
+      size: random(minSize, maxSize),
       color: COLORS[Math.floor(Math.random() * COLORS.length)],
-      duration: random(700, 920),
+      duration: random(900, 1200),
     }
   })
 }
