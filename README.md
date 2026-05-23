@@ -1,93 +1,58 @@
 # komari-nezha
 
-这是我基于 [BITJEBE/nezha-BITJEBE](https://github.com/BITJEBE/nezha-BITJEBE) 继续修改的 [Komari Monitor](https://github.com/komari-monitor/komari) 自定义主题个人修改版。
+这是我基于 [BITJEBE/nezha-BITJEBE](https://github.com/BITJEBE/nezha-BITJEBE) 修改的 [Komari Monitor](https://github.com/komari-monitor/komari) 自定义主题个人版。
 
-本仓库主要用于保存个人定制内容和后续维护记录。
+本仓库主要用于保存我的个人定制内容、实验性视觉调整和后续维护记录。
 
-## 功能特性
+## 个人定制内容
 
-### 个人定制
-- 点击粒子特效：点击或轻触页面时显示彩色粒子爆散动画
-- 毛玻璃样式：卡片、按钮、标签、详情页顶部概览等区域使用玻璃拟态效果
-- 日语支持：新增 `ja-JP` 语言资源与语言切换入口
-- c5 风格时间区：首页顶部使用大号动态时间显示
-- 详情页顶部概览卡片：优化圆角和毛玻璃视觉
+- **点击粒子特效**：点击或轻触页面时显示彩色粒子爆散动画。
+- **毛玻璃视觉优化**：卡片、按钮、标签、详情页顶部概览等区域使用更轻、更透明的玻璃拟态效果。
+- **Hover 扫光效果**：毛玻璃区域悬停时增加轻微斜向高光动画。
+- **日语支持**：新增 `ja-JP` 语言资源与语言切换入口。
+- **c5 风格时间区**：首页顶部使用大号动态时间显示。
+- **首页控制区精简**：只保留全球地图按钮，隐藏其它控制项。
+- **详情页顶部概览优化**：增加毛玻璃、圆角和更协调的视觉样式。
 
-### 流量进度条
-- 服务器卡片内置流量使用进度条（无需外部脚本）
-- 支持所有流量计算模式：`sum`（双向）、`max`、`min`、`up`、`down`
-- 基于使用百分比的 HSL 渐变色（绿 -> 黄 -> 红）
-- 轮播显示：使用百分比、重置倒计时、计费类型
-- 通过服务器 ID 精确匹配（避免重名导致的匹配问题）
+## 使用方法
 
-### 增强标签系统
-- 支持以 `;` 分隔多个标签（匹配 Komari 后端格式）
-- 颜色标签：在标签后追加 `<颜色>` 指定颜色，例如 `So-net<red>;CDN<blue>`
-- 支持所有 [Radix UI 颜色](https://www.radix-ui.com/themes/docs/theme/color)：Gray、Gold、Red、Blue、Green、Purple、Teal、Sky 等
-- 自动分配颜色：未指定颜色的标签会根据文本哈希自动分配视觉上区分度高的颜色
+从本仓库 Releases 下载主题 zip 文件，然后在 Komari 管理面板中上传：
 
-### 服务监控
-- 30 天服务可用性监控，按日统计在线/离线/延迟
-- 数据来源于 Komari 的 `common:getRecords` ping 任务
-- 平均延迟计算自动排除无数据的天数
+```txt
+Komari 管理面板 -> 主题管理 -> 上传主题
+```
 
-### 其他改进
-- 服务器详情页移除了 GPU 部分（Komari 后端不支持 GPU 数据）
-- 页头站点描述从 Komari 后端设置中获取
-- 干净的代码库，无外部脚本依赖
+## 从源码构建
 
-## 安装方法
-
-### 方法一：通过 Komari 管理面板上传
-1. 从本仓库 Releases 下载最新的 zip 文件
-2. 进入 Komari 管理面板 -> 主题管理
-3. 点击上传并选择 zip 文件
-
-### 方法二：从源码构建
 ```bash
 git clone https://github.com/ATaraxl/komari-nezha.git
 cd komari-nezha
 npm install
 npm run build
 ```
-构建产物位于 `dist/` 目录。将 `dist/` 与 `komari-theme.json` 一起打包为 zip 文件，上传至 Komari 即可。
 
-## 配置说明
+构建产物位于：
 
-### 流量限制
-在 Komari 后端按服务器设置：
-- `traffic_limit`：流量上限（字节）
-- `traffic_limit_type`：`sum` | `max` | `min` | `up` | `down`
-- `expired_at`：到期日期（用于计算流量重置倒计时）
-
-### 标签
-在 Komari 后端的标签字段中按服务器设置：
+```txt
+dist/
 ```
-So-net<red>;1Gbps<green>;CN2 GIA<blue>
-```
-- 多个标签以 `;` 分隔
-- 追加 `<颜色>` 指定颜色
-- 未指定颜色的标签自动分配颜色
 
-## 技术栈
+将 `dist/` 与 `komari-theme.json` 一起打包为 zip 后上传到 Komari 即可。
 
-- React 19 + TypeScript
-- Vite 6
-- Tailwind CSS 3
-- TanStack React Query
-- Recharts
-- Framer Motion
-- i18next（中文 / 英文 / 日语等）
+## 上游来源
 
-## 致谢
+本项目是在以下项目基础上的个人修改版：
 
-- 原始主题：[nezha-dash-v1](https://github.com/Akizon77/nezha-dash-v1)，作者 [Akizon77](https://github.com/Akizon77)
+- 上游改版：[BITJEBE/nezha-BITJEBE](https://github.com/BITJEBE/nezha-BITJEBE)
+- 原始主题：[Akizon77/nezha-dash-v1](https://github.com/Akizon77/nezha-dash-v1)
 - 监控后端：[Komari Monitor](https://github.com/komari-monitor/komari)
 
-## 贡献者
+感谢上游作者和相关项目。
 
-- [BITJEBE](https://github.com/BITJEBE) - 项目所有者
-- [Claude](https://claude.ai) - AI 辅助开发
+## 说明
+
+本仓库不是从零开发的独立主题，而是个人使用需求下的定制修改版。  
+上游原有功能和基础结构归属于对应原项目。
 
 ## 许可证
 
