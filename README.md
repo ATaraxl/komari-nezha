@@ -1,8 +1,8 @@
 # komari-nezha
 
-这是我基于 [BITJEBE/nezha-BITJEBE](https://github.com/BITJEBE/nezha-BITJEBE) 修改的 [Komari Monitor](https://github.com/komari-monitor/komari) 自定义主题个人版。
+这是一个基于 [BITJEBE/nezha-BITJEBE](https://github.com/BITJEBE/nezha-BITJEBE) 的 [Komari Monitor](https://github.com/komari-monitor/komari) 自定义主题 AI 修改版。
 
-本仓库主要用于保存我的个人定制内容、实验性视觉调整和后续维护记录。
+本仓库主要用于保存由 AI 辅助完成的视觉实验、交互调整和后续维护记录，主打一个“纯 AI 修改，无人工污染痕迹”。
 
 ## 个人定制内容
 
@@ -51,7 +51,7 @@ dist/
 
 ## 说明
 
-本仓库不是从零开发的独立主题，而是个人使用需求下的定制修改版。  
+本仓库不是从零开发的独立主题，而是在个人使用需求下由 AI 辅助完成的定制修改版。  
 上游原有功能和基础结构归属于对应原项目。
 
 ## 许可证
